@@ -78,7 +78,7 @@ const EventView = ({ events }) => {
       {/* 開催済みイベント */}
       {past.length > 0 ? (
         <section>
-          <h2 className="text-2xl md:text-4xl font-body mb-6 text-glow-soft text-primary">
+          <h2 className="text-2xl md:text-4xl font-body mb-6 text-center text-glow-soft text-primary">
             {title} 履歴
           </h2>
           <div className="space-y-3">
