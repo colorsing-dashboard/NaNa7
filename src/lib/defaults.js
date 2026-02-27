@@ -11,9 +11,15 @@ const DEFAULT_CONFIG = {
     loadingText: 'Loading...',
     showHeader: true,
     showTitle: true,
+    titleStyle: 'glass',
     titleGradient: true,
     titleGradientDirection: 'to-r',
     titleGlow: true,
+    titlePosition: 'center',
+    headerOverlayOpacity: 0.3,
+    headerImageFit: 'cover',
+    headerHeight: '',
+    headerHeightMobile: '',
   },
 
   colors: {

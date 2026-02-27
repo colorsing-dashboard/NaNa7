@@ -82,6 +82,19 @@ const BrandingTab = ({ config, updateConfig }) => {
 
       {config.brand.showTitle !== false && (
         <div className="mb-5 space-y-3 ml-4 border-l-2 border-light-blue/20 pl-4">
+          <div>
+            <label className="block text-xs text-gray-500 mb-1">タイトルスタイル</label>
+            <select
+              value={config.brand.titleStyle || 'glass'}
+              onChange={(e) => updateConfig('brand.titleStyle', e.target.value)}
+              className="px-3 py-1.5 glass-effect border border-light-blue/30 rounded-lg text-white text-sm focus:outline-none focus:border-amber bg-transparent"
+            >
+              <option value="glass">ガラス（フロストガラス帯・推奨）</option>
+              <option value="gradient">グラデーション（従来）</option>
+              <option value="plain">単色</option>
+            </select>
+          </div>
+
           <label className="flex items-center gap-2 text-sm text-gray-300 cursor-pointer">
             <input
               type="checkbox"
@@ -92,19 +105,7 @@ const BrandingTab = ({ config, updateConfig }) => {
             タイトルにグロー（発光）エフェクトを適用
           </label>
 
-          <label className="flex items-center gap-2 text-sm text-gray-300 cursor-pointer">
-            <input
-              type="checkbox"
-              checked={config.brand.titleGradient !== false}
-              onChange={(e) => updateConfig('brand.titleGradient', e.target.checked)}
-              className="accent-amber"
-            />
-            タイトルにグラデーションを適用
-          </label>
-          <p className="text-xs text-gray-500">OFFにすると単色で表示されます（カラー設定の「タイトルテキスト色」が適用）</p>
-          <p className="text-xs text-gray-500">グラデーション色の変更は「カラー設定 → テキスト」タブの「タイトルグラデーション色」で設定できます</p>
-
-          {config.brand.titleGradient !== false && (
+          {(config.brand.titleStyle || 'glass') === 'gradient' && (
             <div>
               <label className="block text-xs text-gray-500 mb-1">グラデーション方向</label>
               <select
@@ -121,8 +122,28 @@ const BrandingTab = ({ config, updateConfig }) => {
                 <option value="to-tr">右上へ ↗</option>
                 <option value="to-tl">左上へ ↖</option>
               </select>
+              <p className="text-xs text-gray-500 mt-1">グラデーション色は「カラー設定 → テキスト」タブで変更できます</p>
             </div>
           )}
+
+          {(config.brand.titleStyle || 'glass') === 'plain' && (
+            <p className="text-xs text-gray-500">単色の色は「カラー設定 → テキスト」タブの「タイトルテキスト色」で設定できます</p>
+          )}
+
+          <div>
+            <label className="block text-xs text-gray-500 mb-1">タイトル位置</label>
+            <select
+              value={config.brand.titlePosition || 'center'}
+              onChange={(e) => updateConfig('brand.titlePosition', e.target.value)}
+              className="px-3 py-1.5 glass-effect border border-light-blue/30 rounded-lg text-white text-sm focus:outline-none focus:border-amber bg-transparent"
+            >
+              <option value="center">中央</option>
+              <option value="top-left">左上</option>
+              <option value="top-right">右上</option>
+              <option value="bottom-left">左下</option>
+              <option value="bottom-right">右下</option>
+            </select>
+          </div>
         </div>
       )}
 
@@ -199,6 +220,58 @@ const BrandingTab = ({ config, updateConfig }) => {
         placeholder="https://drive.google.com/file/d/xxx/view  または  ./customer/header-mobile.png"
         description="縦長画像（750×600px程度）推奨。省略するとPC用画像が使われます"
       />
+
+      <div className="mb-5">
+        <label className="block text-sm font-body text-light-blue mb-1">オーバーレイの暗さ</label>
+        <p className="text-xs text-gray-500 mb-2">画像上の黒い半透明レイヤーの濃さ（0=なし〜1=真っ黒）</p>
+        <div className="flex items-center gap-3">
+          <input
+            type="range" min="0" max="1" step="0.05"
+            value={config.brand.headerOverlayOpacity ?? 0.3}
+            onChange={(e) => updateConfig('brand.headerOverlayOpacity', parseFloat(e.target.value))}
+            className="flex-1 accent-amber"
+          />
+          <span className="text-sm text-gray-300 w-10 text-right">{Math.round((config.brand.headerOverlayOpacity ?? 0.3) * 100)}%</span>
+        </div>
+      </div>
+
+      <div className="mb-5">
+        <label className="block text-sm font-body text-light-blue mb-1">画像の表示モード</label>
+        <p className="text-xs text-gray-500 mb-2">画像が見切れる場合は「コンテイン」を試してください</p>
+        <select
+          value={config.brand.headerImageFit || 'cover'}
+          onChange={(e) => updateConfig('brand.headerImageFit', e.target.value)}
+          className="px-3 py-1.5 glass-effect border border-light-blue/30 rounded-lg text-white text-sm focus:outline-none focus:border-amber bg-transparent"
+        >
+          <option value="cover">カバー（全体を覆う・両端カット）</option>
+          <option value="contain">コンテイン（全体を収める・余白あり）</option>
+          <option value="auto">オリジナルサイズ（拡大なし）</option>
+        </select>
+      </div>
+
+      <div className="grid grid-cols-2 gap-4 mb-5">
+        <div>
+          <label className="block text-sm font-body text-light-blue mb-1">ヘッダー高さ（PC）</label>
+          <input
+            type="text"
+            value={config.brand.headerHeight || ''}
+            onChange={(e) => updateConfig('brand.headerHeight', e.target.value)}
+            placeholder="600px"
+            className="w-full px-4 py-2 glass-effect border border-light-blue/30 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-amber transition-all text-sm"
+          />
+        </div>
+        <div>
+          <label className="block text-sm font-body text-light-blue mb-1">ヘッダー高さ（モバイル）</label>
+          <input
+            type="text"
+            value={config.brand.headerHeightMobile || ''}
+            onChange={(e) => updateConfig('brand.headerHeightMobile', e.target.value)}
+            placeholder="300px"
+            className="w-full px-4 py-2 glass-effect border border-light-blue/30 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-amber transition-all text-sm"
+          />
+        </div>
+      </div>
+      <p className="text-xs text-gray-500 -mt-3 mb-5">単位をつけて入力（例: 400px, 50vh）。空欄でデフォルト値（PC: 600px / モバイル: 300px）</p>
 
       <hr className="border-light-blue/20 my-8" />
       <h3 className="text-lg font-body text-amber mb-4">タイトルフォント</h3>

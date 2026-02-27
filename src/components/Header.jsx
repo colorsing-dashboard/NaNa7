@@ -12,6 +12,14 @@ const GRADIENT_DIR = {
   'to-tl': 'to top left',
 }
 
+const TITLE_POS = {
+  center:         'items-center justify-center',
+  'top-left':     'items-start justify-start pt-8 pl-8',
+  'top-right':    'items-start justify-end pt-8 pr-8',
+  'bottom-left':  'items-end justify-start pb-8 pl-8',
+  'bottom-right': 'items-end justify-end pb-8 pr-8',
+}
+
 const sanitizeCssUrl = (url) => {
   if (!url || typeof url !== 'string') return null
   // CSS url()インジェクション防止: 引用符・括弧・セミコロンを除去
@@ -20,8 +28,25 @@ const sanitizeCssUrl = (url) => {
 }
 
 const TitleText = ({ config, sizeClass, glowClass }) => {
+  const effectiveStyle = config.brand.titleStyle || 'glass'
   const dir = GRADIENT_DIR[config.brand.titleGradientDirection] || 'to right'
-  if (config.brand.titleGradient !== false) {
+
+  if (effectiveStyle === 'glass') {
+    return (
+      <div className="mb-4 inline-block">
+        <div
+          className="px-6 py-3 rounded-xl"
+          style={{ backgroundColor: 'rgba(0,0,0,0.35)', backdropFilter: 'blur(12px)' }}
+        >
+          <h1 className={`${sizeClass} font-display font-black tracking-wide text-white drop-shadow-lg ${glowClass} leading-relaxed py-2`}>
+            {config.brand.name}
+          </h1>
+        </div>
+      </div>
+    )
+  }
+
+  if (effectiveStyle === 'gradient') {
     return (
       <h1
         className={`${sizeClass} font-display font-black text-transparent bg-clip-text ${glowClass} mb-4 leading-relaxed py-2`}
@@ -33,6 +58,7 @@ const TitleText = ({ config, sizeClass, glowClass }) => {
       </h1>
     )
   }
+
   return (
     <h1
       className={`${sizeClass} font-display font-black ${glowClass} mb-4 leading-relaxed py-2`}
@@ -75,9 +101,19 @@ const Header = ({ lastUpdate, loading, onRefresh }) => {
     )
   }
 
+  const imgFit = config.brand.headerImageFit || 'cover'
+  const overlayOpacity = config.brand.headerOverlayOpacity ?? 0.3
+  const titlePos = config.brand.titlePosition || 'center'
+  const posClass = TITLE_POS[titlePos] || TITLE_POS.center
+  const isCenter = titlePos === 'center'
+  const heightDesktop = config.brand.headerHeight || '600px'
+  const heightMobile = config.brand.headerHeightMobile || '300px'
+
   return (
+    <>
+    <style>{`.header-cs{height:${heightMobile}}@media(min-width:768px){.header-cs{height:${heightDesktop}}}`}</style>
     <div
-      className="w-full h-[300px] md:h-[600px] relative overflow-hidden"
+      className="header-cs w-full relative overflow-hidden"
       style={{
         background: hasHeaderBg
           ? `linear-gradient(to bottom, var(--color-header-gradient-end, var(--color-deep-blue)), var(--color-header-gradient-start, var(--color-ocean-teal)) 50%, var(--color-header-gradient-end, var(--color-deep-blue)))`
@@ -85,18 +121,28 @@ const Header = ({ lastUpdate, loading, onRefresh }) => {
       }}
     >
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat md:hidden"
-        style={{ backgroundImage: sanitizeCssUrl(convertDriveUrl(config.images.headerMobile, 800)) || undefined }}
+        className="absolute inset-0 hidden md:block"
+        style={{
+          backgroundImage: sanitizeCssUrl(convertDriveUrl(config.images.headerDesktop, 1600)) || undefined,
+          backgroundSize: imgFit,
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
       ></div>
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat hidden md:block"
-        style={{ backgroundImage: sanitizeCssUrl(convertDriveUrl(config.images.headerDesktop, 1600)) || undefined }}
+        className="absolute inset-0 md:hidden"
+        style={{
+          backgroundImage: sanitizeCssUrl(convertDriveUrl(config.images.headerMobile, 800)) || undefined,
+          backgroundSize: imgFit,
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
       ></div>
-      <div className="absolute inset-0 bg-black/30"></div>
+      <div className="absolute inset-0 bg-black" style={{ opacity: overlayOpacity }}></div>
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEuNSIgZmlsbD0icmdiYSgxMzgsIDE4MCwgMjQ4LCAwLjA1KSIvPjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjIiIGZpbGw9InJnYmEoMTM4LCAxODAsIDI0OCwgMC4wOCkiLz48Y2lyY2xlIGN4PSIzNSIgY3k9IjEwIiByPSIxIiBmaWxsPSJyZ2JhKDEzOCwgMTgwLCAyNDgsIDAuMDMpIi8+PC9zdmc+')] opacity-20 animate-float"></div>
       {config.brand.showTitle !== false && (
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center px-4">
+        <div className={`absolute inset-0 flex ${posClass}`}>
+          <div className={`${isCenter ? 'text-center' : ''} px-4`}>
             <TitleText config={config} sizeClass="text-4xl md:text-8xl" glowClass={glowClass} />
           </div>
         </div>
@@ -118,6 +164,7 @@ const Header = ({ lastUpdate, loading, onRefresh }) => {
         </button>
       </div>
     </div>
+    </>
   )
 }
 

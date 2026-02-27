@@ -49,7 +49,7 @@ const TiersTab = ({ config, updateConfig }) => {
 
       <div className="space-y-4 mb-6">
         {tiers.map((tier, index) => (
-          <div key={tier.key} className="glass-effect rounded-xl p-4 border border-light-blue/20">
+          <div key={index} className="glass-effect rounded-xl p-4 border border-light-blue/20">
             <div className="flex items-center gap-2 mb-3">
               <div className="flex flex-col gap-1">
                 <button
@@ -142,6 +142,33 @@ const TiersTab = ({ config, updateConfig }) => {
                 メンバーシップ枠（特別スタイル）
               </label>
             </div>
+
+            {tier.isMembership && (
+              <div className="mt-3 pl-4 border-l-2 border-gold/40 space-y-2">
+                <label className="flex items-center gap-2 text-xs text-gray-400 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={tier.useKey || false}
+                    onChange={(e) => updateTier(index, 'useKey', e.target.checked)}
+                    className="accent-gold"
+                  />
+                  アクセスキーで保護する（キーを知るユーザーのみ閲覧可）
+                </label>
+                {tier.useKey && (
+                  <div>
+                    <label className="block text-xs text-gray-500 mb-1">アクセスキー</label>
+                    <input
+                      type="text"
+                      value={tier.accessKey || ''}
+                      onChange={(e) => updateTier(index, 'accessKey', e.target.value)}
+                      placeholder="任意の文字列"
+                      className="w-full px-3 py-1.5 glass-effect border border-gold/40 rounded-lg text-white text-sm focus:outline-none focus:border-gold"
+                    />
+                    <p className="text-xs text-gray-600 mt-1">※ 現時点では設定のみ。表示制御は別途実装予定。</p>
+                  </div>
+                )}
+              </div>
+            )}
           </div>
         ))}
       </div>

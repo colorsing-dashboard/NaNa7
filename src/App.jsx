@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useConfig } from './context/ConfigContext'
 import { useSheetData } from './hooks/useSheetData'
-import { isMonthlyFormat } from './lib/sheets'
 import Sidebar from './components/Sidebar'
 import BottomNav from './components/BottomNav'
 import Header from './components/Header'
@@ -48,11 +47,11 @@ function App() {
     if (!selectedMonth && Object.keys(icons).length > 0) {
       const keys = Object.keys(icons).filter(k => k !== '_orderedKeys' && icons[k].length > 0)
       if (keys.length === 0) return
-      if (isMonthlyFormat(keys)) {
-        // 月別: 最新月をデフォルト表示
-        setSelectedMonth(keys.sort().reverse()[0])
+      // yyyymmキーがあれば最新月をデフォルト、なければ_orderedKeysの先頭カテゴリ
+      const monthKeys = keys.filter(k => /^\d{6}$/.test(k))
+      if (monthKeys.length > 0) {
+        setSelectedMonth(monthKeys.sort().reverse()[0])
       } else {
-        // カテゴリ: スプレッドシートの出現順で先頭をデフォルト表示
         const orderedKeys = icons._orderedKeys || keys
         const firstValid = orderedKeys.find(k => icons[k] && icons[k].length > 0)
         if (firstValid) setSelectedMonth(firstValid)
