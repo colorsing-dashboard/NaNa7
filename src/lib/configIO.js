@@ -98,6 +98,14 @@ export function loadConfig() {
         if (parsed.benefitTiers) {
           config.benefitTiers = parsed.benefitTiers
         }
+        // views配列: localStorage のマージ後もIDベースで補完（defaultsの新ビューが消えないように）
+        if (Array.isArray(config.views)) {
+          const existingIds = new Set(config.views.map(v => v.id))
+          const newViews = DEFAULT_CONFIG.views.filter(v => !existingIds.has(v.id))
+          if (newViews.length > 0) {
+            config.views = [...config.views, ...newViews]
+          }
+        }
       }
     } catch {
       // localStorage が使えない場合は無視

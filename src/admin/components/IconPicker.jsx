@@ -212,16 +212,16 @@ const IconPicker = ({ value, onChange, label }) => {
                       displayEl = <span className="text-base leading-none">{iconName}</span>
                     } else if (tab === 'lucide') {
                       iconValue = iconName
-                      displayEl = <IconRenderer icon={iconName} size={16} className="text-gray-300" />
+                      displayEl = <IconRenderer icon={iconName} size={16} className="text-light-blue" />
                     } else if (tab === 'phosphor') {
                       iconValue = `ph:${iconName}:${phosphorWeight}`
-                      displayEl = <IconRenderer icon={iconValue} size={16} className="text-gray-300" />
+                      displayEl = <IconRenderer icon={iconValue} size={16} className="text-violet-300" />
                     } else if (tab === 'tabler') {
                       iconValue = `tb:${iconName}`
-                      displayEl = <IconRenderer icon={iconValue} size={16} className="text-gray-300" />
+                      displayEl = <IconRenderer icon={iconValue} size={16} className="text-emerald-300" />
                     } else {
                       iconValue = `hi:${iconName}`
-                      displayEl = <IconRenderer icon={iconValue} size={16} className="text-gray-300" />
+                      displayEl = <IconRenderer icon={iconValue} size={16} className="text-rose-300" />
                     }
 
                     // Phosphorは名前が一致すればウェイト問わずハイライト
