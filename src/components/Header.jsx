@@ -135,7 +135,7 @@ const Header = ({ lastUpdate, loading, onRefresh }) => {
         style={{
           backgroundImage: sanitizeCssUrl(convertDriveUrl(config.images.headerDesktop, 1600)) || undefined,
           backgroundSize: imgFit,
-          backgroundPosition: 'center',
+          backgroundPosition: imgFit === 'contain' ? 'top center' : 'center',
           backgroundRepeat: 'no-repeat',
         }}
       ></div>
@@ -144,7 +144,7 @@ const Header = ({ lastUpdate, loading, onRefresh }) => {
         style={{
           backgroundImage: sanitizeCssUrl(convertDriveUrl(config.images.headerMobile, 800)) || undefined,
           backgroundSize: imgFit,
-          backgroundPosition: 'center',
+          backgroundPosition: imgFit === 'contain' ? 'top center' : 'center',
           backgroundRepeat: 'no-repeat',
         }}
       ></div>
