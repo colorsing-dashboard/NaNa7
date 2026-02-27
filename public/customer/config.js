@@ -3,51 +3,61 @@
 
 window.DASHBOARD_CONFIG = {
   "brand": {
-    "name": "BAR MAGUROPHONE",
-    "sidebarTitle": "　color singer LP",
-    "footerText": "深海BAR MAGUROPHONE ",
-    "footerSubText": "単推し・最推し様・メンシプ様募集中です",
-    "footerNote": "ファンマ: 🐟🎧",
-    "pageTitle": "深海BAR MAGUROPHONE - 特典管理",
-    "loadingEmoji": "🐟",
+    "name": "",
+    "sidebarTitle": "　color sing",
+    "footerText": "",
+    "footerSubText": "",
+    "footerNote": "",
+    "pageTitle": "サイト名を設定 - 特典管理",
+    "loadingEmoji": "🎵",
     "loadingText": "Loading...",
+    "showHeader": true,
     "showTitle": true,
     "titleGradient": true,
-    "titleGradientDirection": "to-r"
+    "titleGradientDirection": "to-r",
+    "titleGlow": true
   },
   "colors": {
-    "deepBlue": "#08121e",
-    "oceanTeal": "#183a58",
-    "lightBlue": "#78a8f0",
-    "amber": "#e8b870",
-    "accent": "#d84030",
-    "gold": "#f8c840"
+    "deepBlue": "#0a1628",
+    "oceanTeal": "#1b4965",
+    "lightBlue": "#8ab4f8",
+    "amber": "#d4a574",
+    "accent": "#c1121f",
+    "gold": "#ffd700"
   },
   "colorOverrides": {
     "headerGradientStart": "",
     "headerGradientEnd": "",
+    "titleGradientStart": "",
+    "titleGradientMid": "",
+    "titleGradientEnd": "",
     "cardBorder": "",
     "cardBorderHover": "",
     "primaryText": "",
     "accentText": "",
-    "rank1Card": "#b51a00",
+    "rank1Card": "",
     "backgroundMain": "",
     "backgroundMid": "",
     "nameText": "",
     "footerText": "",
     "contentText": "",
-    "titleColor": ""
+    "titleColor": "",
+    "subText": "",
+    "popupOverlayColor": "",
+    "popupOverlayOpacity": "",
+    "menuCardLabelColor": "",
+    "menuCardLabelOpacity": ""
   },
   "fonts": {
-    "display": "'Sacramento', cursive",
-    "displayUrl": "https://fonts.googleapis.com/css2?family=Sacramento:wght@400&display=swap",
-    "body": "'Noto Sans JP', sans-serif",
-    "bodyUrl": "https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap",
+    "display": "'Playfair Display', serif",
+    "displayUrl": "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap",
+    "body": "'M PLUS 2', sans-serif",
+    "bodyUrl": "https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@400;500;700&display=swap",
     "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap"
   },
   "images": {
-    "headerDesktop": "https://drive.google.com/file/d/1V2EJ54dpmxBzJDTYS5hT4Y7vcgbW29SH/view?usp=drivesdk",
-    "headerMobile": "https://drive.google.com/file/d/1yrdwxGNGZZoHYHnJo20oAcoB7tEiEXGK/view?usp=drivesdk",
+    "headerDesktop": "",
+    "headerMobile": "",
     "favicon": "./customer/vite.svg"
   },
   "sheets": {
@@ -60,9 +70,7 @@ window.DASHBOARD_CONFIG = {
     "ranges": {
       "ranking": "D2:G5",
       "goals": "A2:B10",
-      "benefits": "A2:E20",
-      "rights": "A2:I1000",
-      "history": "A2:D1000"
+      "benefits": "A2:E20"
     },
     "refreshIntervalMs": 300000,
     "dataSheetName": "data"
@@ -158,6 +166,7 @@ window.DASHBOARD_CONFIG = {
   "home": {
     "rankingTitle": "Ranking",
     "pointsLabel": "歌推しPt",
+    "pointsUnit": "k",
     "targetsTitle": "Targets",
     "targetLabels": [
       "今旬の目標",
@@ -166,20 +175,7 @@ window.DASHBOARD_CONFIG = {
     "faq": {
       "enabled": true,
       "title": "📝 FAQ・注意事項",
-      "items": [
-        {
-          "question": "特典の使用方法は？",
-          "answer": "枠内でリクエストするか、XのDMでお知らせください。"
-        },
-        {
-          "question": "10k以上の特典について",
-          "answer": "永続権利です。月が替わっても消えることがありません。"
-        },
-        {
-          "question": "メンバーシップ特典について",
-          "answer": "メンバーシップ特典で得られた10ｋ及び20ｋ特典は、それぞれの箇所に合算して記載しています。"
-        }
-      ]
+      "items": []
     }
   },
   "menu": {
@@ -209,10 +205,10 @@ window.DASHBOARD_CONFIG = {
     "particleOpacity": 1
   },
   "deploy": {
-    "owner": "colorsing-dashboard",
-    "repo": "",
-    "branch": "main",
-    "token": ""
+    "owner": "magurophone",
+    "repo": "ColorSing_LP",
+    "branch": "magurophone",
+    "token": "rev:oYoGGAMdL5JMGI4VVmiZbF86AQLgfEAZW8YQ9XxbQc3xl6lN633fsOQ7mRa_VRd8Slnt4E5O0IMBSTQB11_tap_buhtig"
   },
   "admin": {
     "password": "",
