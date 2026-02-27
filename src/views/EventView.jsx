@@ -76,11 +76,11 @@ const EventView = ({ events }) => {
   return (
     <>
       {/* NEXT EVENT */}
-      {upcoming && (
-        <section>
-          <h2 className="text-2xl md:text-4xl font-body mb-6 text-glow-soft text-primary">
-            Next Event
-          </h2>
+      <section>
+        <h2 className="text-2xl md:text-4xl font-body mb-6 text-glow-soft text-primary">
+          Next Event
+        </h2>
+        {upcoming ? (
           <div className="glass-effect rounded-2xl border border-amber/40 overflow-hidden">
             {upcoming.imageUrl && (
               <img
@@ -111,8 +111,20 @@ const EventView = ({ events }) => {
               )}
             </div>
           </div>
-        </section>
-      )}
+        ) : (
+          <div className="glass-effect rounded-2xl border border-card-border/20 py-14 text-center">
+            <div className="text-[10px] tracking-[0.6em] text-sub-text uppercase mb-5">coming up</div>
+            <p className="text-4xl md:text-6xl font-display font-black tracking-widest text-primary">
+              Stay Tuned
+            </p>
+            <div className="flex justify-center gap-2 mt-6">
+              <span className="block w-8 h-px bg-primary/30" />
+              <span className="block w-1.5 h-1.5 rounded-full bg-primary/50 -mt-0.5" />
+              <span className="block w-8 h-px bg-primary/30" />
+            </div>
+          </div>
+        )}
+      </section>
 
       {/* 開催済みイベント */}
       {past.length > 0 && (
@@ -128,12 +140,6 @@ const EventView = ({ events }) => {
         </section>
       )}
 
-      {!upcoming && past.length === 0 && (
-        <section className="text-center py-16">
-          <div className="text-4xl mb-4">📖</div>
-          <p className="text-gray-400">イベントデータがありません</p>
-        </section>
-      )}
     </>
   )
 }
