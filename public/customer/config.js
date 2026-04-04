@@ -38,7 +38,7 @@ window.DASHBOARD_CONFIG = {
   },
   "colors": {
     "deepBlue": "#FFF0F5",
-    "oceanTeal": "#E8D5E0",
+    "oceanTeal": "#F5E8EE",
     "lightBlue": "#89CFF0",
     "amber": "#F4A7BB",
     "accent": "#FF69B4",
