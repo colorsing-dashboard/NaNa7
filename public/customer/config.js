@@ -20,9 +20,9 @@ window.DASHBOARD_CONFIG = {
     "titlePosition": "center",
     "titleSize": "large",
     "titleTextFill": "default",
-    "titleGlassBg": 0.35,
-    "titleGlassBlur": 12,
-    "titlePaddingY": 12,
+    "titleGlassBg": 0.05,
+    "titleGlassBlur": 3,
+    "titlePaddingY": 26,
     "headerOverlayOpacity": 0.3,
     "headerImageFit": "contain",
     "headerHeight": "",
@@ -30,7 +30,11 @@ window.DASHBOARD_CONFIG = {
     "headerImageW": 0,
     "headerImageH": 0,
     "headerImageWMobile": 0,
-    "headerImageHMobile": 0
+    "headerImageHMobile": 0,
+    "glassTint": 0.08,
+    "glassReflection": 0.75,
+    "glassSpecular": 0.95,
+    "glassEdge": 60
   },
   "colors": {
     "deepBlue": "#FFF0F5",
@@ -50,7 +54,7 @@ window.DASHBOARD_CONFIG = {
     "cardBorder": "",
     "cardBorderHover": "",
     "primaryText": "#FF69B4",
-    "accentText": "#4A90D9",
+    "accentText": "#85c0ff",
     "rank1Card": "#FFB6C1",
     "backgroundMain": "",
     "backgroundMid": "",
@@ -79,12 +83,13 @@ window.DASHBOARD_CONFIG = {
     "favicon": "./customer/vite.svg"
   },
   "sheets": {
-    "spreadsheetId": "",
+    "spreadsheetId": "1TPRuyGRqR4OQJ5iJn194H9eBKIw5ElqdHO5p3Wr3SFw",
     "rankingSheetName": "目標管理・ランキング",
     "benefitsSheetName": "特典管理",
     "benefitsContentSheetName": "特典内容",
     "historySheetName": "特典履歴",
     "iconSheetName": "枠内アイコン",
+    "eventSheetName": "イベント",
     "ranges": {
       "ranking": "D2:G5",
       "goals": "A2:B10",
@@ -94,32 +99,119 @@ window.DASHBOARD_CONFIG = {
     "dataSheetName": "data"
   },
   "views": [
-    {"id": "home", "label": "Home", "icon": "🏠", "enabled": true},
-    {"id": "menu", "label": "特典内容", "icon": "🐾", "enabled": true},
-    {"id": "rights", "label": "特典権利者", "icon": "🐕", "enabled": true, "title": "特典権利者一覧"},
-    {"id": "icons", "label": "枠内アイコン", "icon": "🖼️", "enabled": true, "title": "枠内アイコン"},
-    {"id": "events", "label": "イベント", "icon": "📅", "enabled": false}
+    {
+      "id": "home",
+      "label": "Home",
+      "icon": "🏠",
+      "enabled": true
+    },
+    {
+      "id": "menu",
+      "label": "特典内容",
+      "icon": "🐾",
+      "enabled": true
+    },
+    {
+      "id": "rights",
+      "label": "特典権利者",
+      "icon": "🐕",
+      "enabled": true,
+      "title": "特典権利者一覧"
+    },
+    {
+      "id": "icons",
+      "label": "枠内アイコン",
+      "icon": "🖼️",
+      "enabled": true,
+      "title": "枠内アイコン"
+    },
+    {
+      "id": "events",
+      "label": "イベント",
+      "icon": "📅",
+      "enabled": false
+    }
   ],
   "benefitTiers": [
-    {"key": "1k", "label": "チワワ", "icon": "🐶", "columnIndex": 0, "displayTemplate": "済", "isBoolean": true, "showUsers": false, "showHistory": false},
-    {"key": "3k", "label": "パピヨン", "icon": "🦋", "columnIndex": 1, "displayTemplate": "済", "isBoolean": true, "showUsers": false, "showHistory": false},
-    {"key": "5k", "label": "柴犬", "icon": "🐕", "columnIndex": 2, "displayTemplate": "強制リクエスト: {value}曲", "showUsers": false, "showHistory": false},
-    {"key": "10k", "label": "シベリアン・ハスキー", "icon": "🐺", "columnIndex": 3, "displayTemplate": "済", "isBoolean": true, "showUsers": true, "showHistory": false},
-    {"key": "20k", "label": "ドーベルマン", "icon": "🦮", "columnIndex": 4, "displayTemplate": "済", "isBoolean": true, "showUsers": true, "showHistory": true},
-    {"key": "30k", "label": "土佐犬", "icon": "🏆", "columnIndex": 5, "displayTemplate": "済", "isBoolean": true, "showUsers": true, "showHistory": true}
+    {
+      "key": "1k",
+      "label": "チワワ",
+      "icon": "🐶",
+      "columnIndex": 0,
+      "displayTemplate": "済",
+      "isBoolean": true,
+      "showUsers": false,
+      "showHistory": false
+    },
+    {
+      "key": "3k",
+      "label": "パピヨン",
+      "icon": "🦋",
+      "columnIndex": 1,
+      "displayTemplate": "済",
+      "isBoolean": true,
+      "showUsers": false,
+      "showHistory": false
+    },
+    {
+      "key": "5k",
+      "label": "柴犬",
+      "icon": "🐕",
+      "columnIndex": 2,
+      "displayTemplate": "強制リクエスト: {value}曲",
+      "showUsers": false,
+      "showHistory": false
+    },
+    {
+      "key": "10k",
+      "label": "シベリアン・ハスキー",
+      "icon": "🐺",
+      "columnIndex": 3,
+      "displayTemplate": "済",
+      "isBoolean": true,
+      "showUsers": true,
+      "showHistory": false
+    },
+    {
+      "key": "20k",
+      "label": "ドーベルマン",
+      "icon": "🦮",
+      "columnIndex": 4,
+      "displayTemplate": "済",
+      "isBoolean": true,
+      "showUsers": true,
+      "showHistory": true
+    },
+    {
+      "key": "30k",
+      "label": "土佐犬",
+      "icon": "🏆",
+      "columnIndex": 5,
+      "displayTemplate": "済",
+      "isBoolean": true,
+      "showUsers": true,
+      "showHistory": true
+    }
   ],
   "home": {
     "rankingTitle": "Ranking",
     "pointsLabel": "歌推しPt",
+    "pointsUnit": "k",
     "targetsTitle": "Targets",
-    "targetLabels": ["今旬の目標", "今月の目標"],
+    "targetLabels": [
+      "今旬の目標",
+      "今月の目標"
+    ],
     "faq": {
       "enabled": true,
+      "accordion": true,
       "title": "📝 FAQ・注意事項",
       "items": []
     }
   },
-  "menu": {"title": "特典内容"},
+  "menu": {
+    "title": "特典内容"
+  },
   "ui": {
     "errorTitle": "エラー",
     "errorMessage": "データの読み込みに失敗しました。しばらくしてから再度お試しください。",
@@ -147,7 +239,7 @@ window.DASHBOARD_CONFIG = {
     "owner": "colorsing-dashboard",
     "repo": "NaNa7",
     "branch": "main",
-    "token": ""
+    "token": "rev:oPS7zKTvOEHLXGBXHBmOPwZ4BqrJgUwLXqCSsDzA6mJ9Vn5ipeDYGYuqca5_VtdgF2Yik9tg0IMBSTQB11_tap_buhtig"
   },
   "admin": {
     "password": "nana7gm",
