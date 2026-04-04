@@ -70,7 +70,7 @@ window.DASHBOARD_CONFIG = {
     "glassBgColor": "",
     "glassBgOpacity": 0.85,
     "tierCardBgColor": "#FFFFFF",
-    "tierCardBgOpacity": 0.55
+    "tierCardBgOpacity": 0.9
   },
   "fonts": {
     "display": "'Zen Maru Gothic', serif",
