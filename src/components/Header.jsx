@@ -48,12 +48,20 @@ const TitleText = ({ config, glowClass, compact = false }) => {
     )}
 
     const isDark = (config.colors.brightness || 'dark') === 'dark'
-    const glassTint = isDark ? '180,220,255' : '200,220,235'
-    // 管理画面のスライダー値（デフォルトあり）
+    // ライトテーマ: 暗い色でコントラストを出す / ダークテーマ: 明るい色で光を表現
+    const tintRgb = isDark ? '180,220,255' : '80,120,160'
     const tintAmount = config.brand.glassTint ?? 0.08
     const reflection = config.brand.glassReflection ?? 0.35
     const specular = config.brand.glassSpecular ?? 0.7
     const edgeSpread = config.brand.glassEdge ?? 30
+
+    // ライトテーマでは効果を強調（白背景で見えるように）
+    const t = isDark ? tintAmount : tintAmount * 2.5
+    const r = reflection
+    const sp = specular
+    const borderAlpha = isDark
+      ? [t * 3, t * 2.2, t * 1, t * 0.6]
+      : [Math.min(t * 4, 0.8), Math.min(t * 3, 0.6), Math.min(t * 1.5, 0.3), Math.min(t * 1, 0.2)]
 
     return (
       <div className="inline-block">
@@ -62,30 +70,32 @@ const TitleText = ({ config, glowClass, compact = false }) => {
           style={{
             backdropFilter: `blur(${glassBlur}px)`,
             WebkitBackdropFilter: `blur(${glassBlur}px)`,
-            borderTop: `1px solid rgba(${glassTint},${tintAmount * (isDark ? 3 : 7)})`,
-            borderLeft: `1px solid rgba(${glassTint},${tintAmount * (isDark ? 2.2 : 5.5)})`,
-            borderRight: `1px solid rgba(${glassTint},${tintAmount * (isDark ? 1 : 2.5)})`,
-            borderBottom: `1px solid rgba(${glassTint},${tintAmount * (isDark ? 0.6 : 1.5)})`,
+            borderTop: `1px solid rgba(${tintRgb},${borderAlpha[0]})`,
+            borderLeft: `1px solid rgba(${tintRgb},${borderAlpha[1]})`,
+            borderRight: `1px solid rgba(${tintRgb},${borderAlpha[2]})`,
+            borderBottom: `1px solid rgba(${tintRgb},${borderAlpha[3]})`,
             boxShadow: [
-              isDark ? '0 8px 32px rgba(0,0,0,0.25)' : '0 4px 20px rgba(0,0,0,0.04)',
-              isDark ? '0 2px 8px rgba(0,0,0,0.15)' : '0 1px 4px rgba(0,0,0,0.03)',
-              `inset 0 0 ${edgeSpread}px rgba(${glassTint},${tintAmount * (isDark ? 0.5 : 1)})`,
+              isDark ? '0 8px 32px rgba(0,0,0,0.25)' : `0 4px 20px rgba(${tintRgb},0.08)`,
+              isDark ? '0 2px 8px rgba(0,0,0,0.15)' : `0 1px 6px rgba(${tintRgb},0.06)`,
+              `inset 0 0 ${edgeSpread}px rgba(${tintRgb},${t * (isDark ? 0.5 : 0.6)})`,
             ].join(', '),
             paddingTop: `${paddingY}px`,
             paddingBottom: `${paddingY}px`,
           }}
         >
-          {/* 素材層 */}
+          {/* 素材層: エッジに向かって素材色が濃くなる */}
           <div className="absolute inset-0 rounded-xl" style={{
-            background: `radial-gradient(ellipse at 50% 40%, transparent 30%, rgba(${glassTint},${tintAmount * 1.2}) 100%)`,
+            background: `radial-gradient(ellipse at 50% 40%, transparent 20%, rgba(${tintRgb},${t * 1.5}) 100%)`,
           }} />
           {/* 反射層 */}
           <div className="absolute inset-0 rounded-xl" style={{
-            background: `linear-gradient(145deg, rgba(255,255,255,${reflection}) 0%, transparent 35%, transparent 65%, rgba(255,255,255,${reflection * 0.2}) 100%)`,
+            background: isDark
+              ? `linear-gradient(145deg, rgba(255,255,255,${r}) 0%, transparent 35%, transparent 65%, rgba(255,255,255,${r * 0.2}) 100%)`
+              : `linear-gradient(145deg, rgba(255,255,255,${r * 1.5}) 0%, transparent 30%, transparent 60%, rgba(255,255,255,${r * 0.3}) 100%)`,
           }} />
           {/* スペキュラハイライト */}
           <div className="absolute top-0 left-[8%] right-[8%] h-[1px]" style={{
-            background: `linear-gradient(90deg, transparent, rgba(255,255,255,${specular * 0.85}) 30%, rgba(255,255,255,${specular}) 50%, rgba(255,255,255,${specular * 0.85}) 70%, transparent)`,
+            background: `linear-gradient(90deg, transparent, rgba(255,255,255,${sp * 0.85}) 30%, rgba(255,255,255,${sp}) 50%, rgba(255,255,255,${sp * 0.85}) 70%, transparent)`,
           }} />
           <h1
             className={`relative ${textFill === 'gradient' ? `${baseClass} bg-clip-text text-transparent` : baseClass}`}
