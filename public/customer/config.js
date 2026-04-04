@@ -22,7 +22,7 @@ window.DASHBOARD_CONFIG = {
     "titleTextFill": "default",
     "titleGlassBg": 0.05,
     "titleGlassBlur": 3,
-    "titlePaddingY": 26,
+    "titlePaddingY": 20,
     "headerOverlayOpacity": 0.3,
     "headerImageFit": "contain",
     "headerHeight": "",
