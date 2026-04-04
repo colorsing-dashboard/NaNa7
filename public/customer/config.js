@@ -42,8 +42,8 @@ window.DASHBOARD_CONFIG = {
     "brightness": "light"
   },
   "colorOverrides": {
-    "headerGradientStart": "#FFB6C1",
-    "headerGradientEnd": "#89CFF0",
+    "headerGradientStart": "",
+    "headerGradientEnd": "",
     "titleGradientStart": "#FF69B4",
     "titleGradientMid": "#DDA0DD",
     "titleGradientEnd": "#89CFF0",
