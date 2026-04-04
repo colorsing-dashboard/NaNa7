@@ -140,8 +140,8 @@ const Header = ({ lastUpdate, loading, onRefresh }) => {
   const imgH  = config.brand.headerImageH
   const imgWM = config.brand.headerImageWMobile
   const imgHM = config.brand.headerImageHMobile
-  const defaultHeightDesktop = hasImage ? '600px' : '120px'
-  const defaultHeightMobile  = hasImage ? '400px' : '80px'
+  const defaultHeightDesktop = hasImage ? '600px' : '200px'
+  const defaultHeightMobile  = hasImage ? '400px' : '140px'
   const heightDesktop = config.brand.headerHeight || defaultHeightDesktop
   const heightMobile  = config.brand.headerHeightMobile || defaultHeightMobile
 
