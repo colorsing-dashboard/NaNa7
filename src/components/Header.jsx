@@ -48,6 +48,8 @@ const TitleText = ({ config, glowClass, compact = false }) => {
     )}
 
     const isDark = (config.colors.brightness || 'dark') === 'dark'
+    // ガラスの物理特性: 素材自体がわずかに青緑がかる（ソーダガラスの鉄分）
+    const glassTint = isDark ? '180,220,255' : '200,220,235'
 
     return (
       <div className="inline-block">
@@ -56,25 +58,33 @@ const TitleText = ({ config, glowClass, compact = false }) => {
           style={{
             backdropFilter: `blur(${glassBlur}px)`,
             WebkitBackdropFilter: `blur(${glassBlur}px)`,
-            border: isDark ? '1px solid rgba(255,255,255,0.18)' : '1px solid rgba(0,0,0,0.06)',
-            boxShadow: isDark
-              ? '0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.08)'
-              : '0 4px 24px rgba(0,0,0,0.05), inset 0 1px 0 rgba(255,255,255,0.6)',
+            // エッジ: 上辺と左辺は明るく（光源）、下辺と右辺は暗い（影）
+            borderTop: `1px solid rgba(${glassTint},${isDark ? 0.25 : 0.6})`,
+            borderLeft: `1px solid rgba(${glassTint},${isDark ? 0.18 : 0.45})`,
+            borderRight: `1px solid rgba(${glassTint},${isDark ? 0.08 : 0.2})`,
+            borderBottom: `1px solid rgba(${glassTint},${isDark ? 0.05 : 0.12})`,
+            // 厚み: 外側に落ちる影 + 内側の深み
+            boxShadow: [
+              isDark ? '0 8px 32px rgba(0,0,0,0.25)' : '0 4px 20px rgba(0,0,0,0.04)',
+              isDark ? '0 2px 8px rgba(0,0,0,0.15)' : '0 1px 4px rgba(0,0,0,0.03)',
+              // 内側: 端ほど不透明になる（ガラスの厚み表現）
+              `inset 0 0 ${isDark ? 30 : 20}px rgba(${glassTint},${isDark ? 0.04 : 0.08})`,
+            ].join(', '),
             paddingTop: `${paddingY}px`,
             paddingBottom: `${paddingY}px`,
           }}
         >
-          {/* ガラス内部: 半透明ベース + 光の反射グラデーション */}
+          {/* 素材層: ガラス自体の色味（中心が透明、端に向かって素材色が出る） */}
           <div className="absolute inset-0 rounded-xl" style={{
-            background: isDark
-              ? `linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 50%, rgba(255,255,255,0.06) 100%)`
-              : `linear-gradient(135deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0.2) 40%, rgba(255,255,255,0.4) 100%)`,
+            background: `radial-gradient(ellipse at 50% 40%, transparent 30%, rgba(${glassTint},${isDark ? 0.06 : 0.1}) 100%)`,
           }} />
-          {/* ガラス内部: 上辺ハイライト */}
-          <div className="absolute top-0 left-[10%] right-[10%] h-[1px]" style={{
-            background: isDark
-              ? 'linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent)'
-              : 'linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent)',
+          {/* 反射層: 光源（左上）からの表面反射 */}
+          <div className="absolute inset-0 rounded-xl" style={{
+            background: `linear-gradient(145deg, rgba(255,255,255,${isDark ? 0.12 : 0.35}) 0%, transparent 35%, transparent 65%, rgba(255,255,255,${isDark ? 0.03 : 0.08}) 100%)`,
+          }} />
+          {/* スペキュラハイライト: 上辺の鋭い光の線 */}
+          <div className="absolute top-0 left-[8%] right-[8%] h-[1px]" style={{
+            background: `linear-gradient(90deg, transparent, rgba(255,255,255,${isDark ? 0.3 : 0.7}) 30%, rgba(255,255,255,${isDark ? 0.4 : 0.9}) 50%, rgba(255,255,255,${isDark ? 0.3 : 0.7}) 70%, transparent)`,
           }} />
           <h1
             className={`relative ${textFill === 'gradient' ? `${baseClass} bg-clip-text text-transparent` : baseClass}`}
