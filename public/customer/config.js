@@ -38,7 +38,7 @@ window.DASHBOARD_CONFIG = {
   },
   "colors": {
     "deepBlue": "#FFF0F5",
-    "oceanTeal": "#FFE5EC",
+    "oceanTeal": "#F5E8EE",
     "lightBlue": "#89CFF0",
     "amber": "#F4A7BB",
     "accent": "#FF69B4",
@@ -65,7 +65,7 @@ window.DASHBOARD_CONFIG = {
     "subText": "",
     "popupOverlayColor": "",
     "popupOverlayOpacity": "",
-    "menuCardLabelColor": "",
+    "menuCardLabelColor": "#FFB6C1",
     "menuCardLabelOpacity": "",
     "glassBgColor": "#F5D1DE",
     "glassBgOpacity": 0.85,
