@@ -86,12 +86,12 @@ window.DASHBOARD_CONFIG = {
     "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap"
   },
   "images": {
-    "headerDesktop": "",
-    "headerMobile": "",
+    "headerDesktop": "https://drive.google.com/file/d/1R4RJ8MMFZ1yKfHtTRPDB3mjjeK-Ze971/view?usp=drivesdk",
+    "headerMobile": "https://drive.google.com/file/d/1vLmHNKf1B4x8wvu_h5VsTGyI3XYCgjqY/view?usp=drivesdk",
     "favicon": "./customer/vite.svg"
   },
   "sheets": {
-    "spreadsheetId": "1TPRuyGRqR4OQJ5iJn194H9eBKIw5ElqdHO5p3Wr3SFw",
+    "spreadsheetId": "1yIKQpqzA4OJ7WGsyFBI28L9QeTGrV2dM9-_glgO9o5o",
     "rankingSheetName": "目標管理・ランキング",
     "benefitsSheetName": "特典管理",
     "benefitsContentSheetName": "特典内容",
