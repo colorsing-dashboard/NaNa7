@@ -54,7 +54,7 @@ window.DASHBOARD_CONFIG = {
     "cardBorder": "",
     "cardBorderHover": "",
     "primaryText": "#8B3A5F",
-    "accentText": "#8B3A5F",
+    "accentText": "#3A5F8B",
     "rank1Card": "#FFB6C1",
     "backgroundMain": "",
     "backgroundMid": "",
