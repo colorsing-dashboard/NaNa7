@@ -71,8 +71,8 @@ window.DASHBOARD_CONFIG = {
     "glassBgOpacity": 0.85,
     "tierCardBgColor": "#FFFFFF",
     "tierCardBgOpacity": 0.9,
-    "menuCardBgColor": "#FFD1DC",
-    "menuCardBgOpacity": 0.75
+    "menuCardBgColor": "#FFB6D0",
+    "menuCardBgOpacity": 0.95
   },
   "fonts": {
     "display": "'Zen Maru Gothic', serif",
