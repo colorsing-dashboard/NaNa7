@@ -37,7 +37,7 @@ window.DASHBOARD_CONFIG = {
     "glassEdge": 60
   },
   "colors": {
-    "deepBlue": "#F2C8D2",
+    "deepBlue": "#F5CDD6",
     "oceanTeal": "#F5CDD6",
     "lightBlue": "#78C8E8",
     "amber": "#F4A7BB",
@@ -55,7 +55,7 @@ window.DASHBOARD_CONFIG = {
     "cardBorderHover": "",
     "primaryText": "#E16389",
     "accentText": "#3880C0",
-    "rank1Card": "#FFB6C1",
+    "rank1Card": "#ff61a5",
     "backgroundMain": "",
     "backgroundMid": "",
     "nameText": "#3D2820",
@@ -64,19 +64,19 @@ window.DASHBOARD_CONFIG = {
     "titleColor": "",
     "subText": "",
     "popupOverlayColor": "",
-    "popupOverlayOpacity": "",
+    "popupOverlayOpacity": 0.9,
     "menuCardLabelColor": "#FFB6C1",
     "menuCardLabelOpacity": "",
-    "glassBgColor": "#F5D1DE",
-    "glassBgOpacity": 0.85,
     "tierCardBgColor": "#FFFFFF",
     "tierCardBgOpacity": 0.9,
     "menuCardBgColor": "",
-    "menuCardBgOpacity": ""
+    "menuCardBgOpacity": "",
+    "glassBgColor": "#74d8ff",
+    "glassBgOpacity": 0.65
   },
   "fonts": {
-    "display": "'Zen Kurenaido', serif",
-    "displayUrl": "https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap",
+    "display": "'Zen Maru Gothic', serif",
+    "displayUrl": "https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap",
     "body": "'M PLUS Rounded 1c', sans-serif",
     "bodyUrl": "https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap",
     "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap"
