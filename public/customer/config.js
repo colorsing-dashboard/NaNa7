@@ -53,7 +53,7 @@ window.DASHBOARD_CONFIG = {
     "titleGradientEnd": "#89CFF0",
     "cardBorder": "",
     "cardBorderHover": "",
-    "primaryText": "#FF9FC8",
+    "primaryText": "#D4639A",
     "accentText": "#89CFF0",
     "rank1Card": "#FFB6C1",
     "backgroundMain": "",
