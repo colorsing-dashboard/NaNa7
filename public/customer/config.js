@@ -67,7 +67,7 @@ window.DASHBOARD_CONFIG = {
     "popupOverlayOpacity": "",
     "menuCardLabelColor": "",
     "menuCardLabelOpacity": "",
-    "glassBgColor": "#F5D1DE",
+    "glassBgColor": "#F0B5D0",
     "glassBgOpacity": 0.85,
     "tierCardBgColor": "#FFFFFF",
     "tierCardBgOpacity": 0.9
