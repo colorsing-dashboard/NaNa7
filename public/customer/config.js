@@ -37,9 +37,9 @@ window.DASHBOARD_CONFIG = {
     "glassEdge": 60
   },
   "colors": {
-    "deepBlue": "#FFF0F5",
-    "oceanTeal": "#F5E8EE",
-    "lightBlue": "#89CFF0",
+    "deepBlue": "#F2C8D2",
+    "oceanTeal": "#F5CDD6",
+    "lightBlue": "#78C8E8",
     "amber": "#F4A7BB",
     "accent": "#FF69B4",
     "gold": "#FFD700",
