@@ -75,8 +75,8 @@ window.DASHBOARD_CONFIG = {
     "menuCardBgOpacity": ""
   },
   "fonts": {
-    "display": "'Zen Maru Gothic', serif",
-    "displayUrl": "https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap",
+    "display": "'Zen Kurenaido', serif",
+    "displayUrl": "https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap",
     "body": "'M PLUS Rounded 1c', sans-serif",
     "bodyUrl": "https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap",
     "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap"
