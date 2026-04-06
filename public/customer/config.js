@@ -3,21 +3,21 @@
 
 window.DASHBOARD_CONFIG = {
   "brand": {
-    "name": "NaNa❼🐾",
+    "name": "NaNa❼🐾の犬小屋",
     "sidebarTitle": "　color sing",
-    "footerText": "",
-    "footerSubText": "",
+    "footerText": "NaNa❼🐾の犬小屋",
+    "footerSubText": "応援ギフトは保護犬活動の場へ寄付します🐾",
     "footerNote": "",
     "pageTitle": "NaNa❼🐾 - 特典管理",
     "loadingEmoji": "🐾",
     "loadingText": "Loading...",
     "showHeader": true,
     "showTitle": true,
-    "titleStyle": "glass",
+    "titleStyle": "gradient",
     "titleGradient": true,
     "titleGradientDirection": "to-r",
-    "titleGlow": true,
-    "titlePosition": "center",
+    "titleGlow": false,
+    "titlePosition": "bottom-right",
     "titleSize": "large",
     "titleTextFill": "default",
     "titleGlassBg": 0.05,
@@ -49,8 +49,8 @@ window.DASHBOARD_CONFIG = {
     "headerGradientStart": "",
     "headerGradientEnd": "",
     "titleGradientStart": "#FF69B4",
-    "titleGradientMid": "#89CFF0",
-    "titleGradientEnd": "#89CFF0",
+    "titleGradientMid": "#a3edf8",
+    "titleGradientEnd": "#ff93dd",
     "cardBorder": "",
     "cardBorderHover": "",
     "primaryText": "#904AE8",
@@ -59,9 +59,9 @@ window.DASHBOARD_CONFIG = {
     "backgroundMain": "",
     "backgroundMid": "",
     "nameText": "#904AE8",
-    "footerText": "",
+    "footerText": "#f792ff",
     "contentText": "#6f36d9",
-    "titleColor": "",
+    "titleColor": "#fcb5d5",
     "subText": "",
     "popupOverlayColor": "",
     "popupOverlayOpacity": 0.9,
@@ -81,8 +81,8 @@ window.DASHBOARD_CONFIG = {
   "fonts": {
     "display": "'Dancing Script', cursive",
     "displayUrl": "https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap",
-    "body": "'Hachi Maru Pop', cursive",
-    "bodyUrl": "https://fonts.googleapis.com/css2?family=Hachi%20Maru%20Pop:wght@400&display=swap",
+    "body": "'Yu Gothic Medium', 'YuGothic', sans-serif",
+    "bodyUrl": "",
     "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap"
   },
   "images": {
@@ -214,7 +214,16 @@ window.DASHBOARD_CONFIG = {
       "enabled": true,
       "accordion": true,
       "title": "📝 FAQ・注意事項",
-      "items": []
+      "items": [
+        {
+          "question": "枠内のお願い🐾",
+          "answer": "たくさん笑って！楽しく！自由に！が好き！\nたくさん笑って！楽しく！自由に！帰ってやろーっていう気持ちで来てくれたら倍々楽しくなるー！！"
+        },
+        {
+          "question": "特典の使用方法🐾",
+          "answer": "強制リクエストは、枠内かXのDMで教えてください！\n収録プレゼント、特別配信は月内希望者の方へのみになります！！\n"
+        }
+      ]
     }
   },
   "menu": {
