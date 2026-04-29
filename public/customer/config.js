@@ -110,33 +110,33 @@ window.DASHBOARD_CONFIG = {
     {
       "id": "home",
       "label": "Home",
-      "icon": "🏠",
+      "icon": "home",
       "enabled": true
     },
     {
       "id": "menu",
       "label": "特典内容",
-      "icon": "🐾",
+      "icon": "book-open",
       "enabled": true
     },
     {
       "id": "rights",
       "label": "特典権利者",
-      "icon": "🐕",
+      "icon": "user-check",
       "enabled": true,
       "title": "特典権利者一覧"
     },
     {
       "id": "icons",
       "label": "枠内アイコン",
-      "icon": "🖼️",
+      "icon": "gift",
       "enabled": true,
       "title": "枠内アイコン"
     },
     {
       "id": "events",
       "label": "イベント",
-      "icon": "📅",
+      "icon": "calendar-days",
       "enabled": false
     }
   ],
@@ -144,7 +144,7 @@ window.DASHBOARD_CONFIG = {
     {
       "key": "1k",
       "label": "チワワ",
-      "icon": "🐶",
+      "icon": "🦊",
       "columnIndex": 0,
       "displayTemplate": "済",
       "isBoolean": true,
@@ -154,7 +154,7 @@ window.DASHBOARD_CONFIG = {
     {
       "key": "3k",
       "label": "パピヨン",
-      "icon": "🦋",
+      "icon": "🐶",
       "columnIndex": 0,
       "displayTemplate": "済",
       "isBoolean": true,
@@ -164,7 +164,7 @@ window.DASHBOARD_CONFIG = {
     {
       "key": "5k",
       "label": "柴犬",
-      "icon": "🐕",
+      "icon": "🐯",
       "columnIndex": 1,
       "displayTemplate": "強制リクエスト: {value}曲",
       "showUsers": false,
@@ -173,7 +173,7 @@ window.DASHBOARD_CONFIG = {
     {
       "key": "10k",
       "label": "シベリアン・ハスキー",
-      "icon": "🐺",
+      "icon": "🦁",
       "columnIndex": 2,
       "displayTemplate": "済",
       "isBoolean": true,
@@ -183,7 +183,7 @@ window.DASHBOARD_CONFIG = {
     {
       "key": "20k",
       "label": "ドーベルマン",
-      "icon": "🦮",
+      "icon": "🐲",
       "columnIndex": 3,
       "displayTemplate": "済",
       "isBoolean": true,
@@ -193,7 +193,7 @@ window.DASHBOARD_CONFIG = {
     {
       "key": "30k",
       "label": "土佐犬",
-      "icon": "🏆",
+      "icon": "🦄",
       "columnIndex": 4,
       "displayTemplate": "済",
       "isBoolean": true,
