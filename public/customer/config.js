@@ -137,7 +137,7 @@ window.DASHBOARD_CONFIG = {
       "id": "events",
       "label": "イベント",
       "icon": "calendar-days",
-      "enabled": false
+      "enabled": true
     }
   ],
   "benefitTiers": [
