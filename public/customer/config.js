@@ -19,6 +19,7 @@ window.DASHBOARD_CONFIG = {
     "titleGlow": false,
     "titlePosition": "bottom-right",
     "titleSize": "large",
+    "titleOffsetY": -0.12,
     "titleTextFill": "default",
     "titleGlassBg": 0.05,
     "titleGlassBlur": 3,
@@ -185,7 +186,7 @@ window.DASHBOARD_CONFIG = {
       "label": "ドーベルマン",
       "icon": "🐲",
       "columnIndex": 3,
-      "displayTemplate": "済",
+      "displayTemplate": "5曲特別セトリ配信",
       "isBoolean": true,
       "showUsers": true,
       "showHistory": true
@@ -217,7 +218,7 @@ window.DASHBOARD_CONFIG = {
       "items": [
         {
           "question": "枠内のお願い🐾",
-          "answer": "たくさん笑って！楽しく！自由に！が好き！\nたくさん笑って！楽しく！自由に！帰ってやろーっていう気持ちで来てくれたら倍々楽しくなるー！！"
+          "answer": "元気！楽しい！平和！な枠をみなさんと一緒に作っていきたいです🐾 他の人がいやだな〜って思うような言動はやめてぇね🐾 ただ、人それぞれの価値観があるのも当たり前なので、少しの余白を置いてくれるとうれしいです🐾 "
         },
         {
           "question": "特典の使用方法🐾",
