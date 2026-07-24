@@ -196,7 +196,7 @@ window.DASHBOARD_CONFIG = {
       "label": "土佐犬",
       "icon": "🦄",
       "columnIndex": 4,
-      "displayTemplate": "済",
+      "displayTemplate": "一曲収録プレゼント🎁",
       "isBoolean": true,
       "showUsers": true,
       "showHistory": true
