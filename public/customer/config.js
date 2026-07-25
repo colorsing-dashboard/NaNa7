@@ -208,7 +208,7 @@ window.DASHBOARD_CONFIG = {
     "pointsUnit": "k",
     "targetsTitle": "Targets",
     "targetLabels": [
-      "今旬の目標",
+      "今月の目標",
       "今月の目標"
     ],
     "faq": {
