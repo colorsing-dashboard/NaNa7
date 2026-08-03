@@ -169,7 +169,8 @@ window.DASHBOARD_CONFIG = {
       "columnIndex": 1,
       "displayTemplate": "強制リクエスト: {value}曲",
       "showUsers": false,
-      "showHistory": false
+      "showHistory": false,
+      "isBoolean": false
     },
     {
       "key": "10k",
@@ -196,7 +197,7 @@ window.DASHBOARD_CONFIG = {
       "label": "土佐犬",
       "icon": "🦄",
       "columnIndex": 4,
-      "displayTemplate": "一曲収録プレゼント🎁",
+      "displayTemplate": "済",
       "isBoolean": true,
       "showUsers": true,
       "showHistory": true
@@ -208,7 +209,7 @@ window.DASHBOARD_CONFIG = {
     "pointsUnit": "k",
     "targetsTitle": "Targets",
     "targetLabels": [
-      "今月の目標",
+      "今旬の目標",
       "今月の目標"
     ],
     "faq": {
@@ -222,7 +223,7 @@ window.DASHBOARD_CONFIG = {
         },
         {
           "question": "特典の使用方法🐾",
-          "answer": "強制リクエストは、枠内かXのDMで教えてください！\n収録プレゼント、特別配信は月内希望者の方へのみになります！！\n"
+          "answer": "収録プレゼント、特別配信は月内希望者の方へのみになります！！\n"
         }
       ]
     }
