@@ -157,7 +157,7 @@ window.DASHBOARD_CONFIG = {
       "label": "パピヨン",
       "icon": "🐶",
       "columnIndex": 0,
-      "displayTemplate": "済",
+      "displayTemplate": "手描き枠内アイコン",
       "isBoolean": true,
       "showUsers": false,
       "showHistory": false
@@ -167,7 +167,7 @@ window.DASHBOARD_CONFIG = {
       "label": "シベリアン・ハスキー",
       "icon": "🦁",
       "columnIndex": 2,
-      "displayTemplate": "済",
+      "displayTemplate": "手描き枠内特別アイコン",
       "isBoolean": true,
       "showUsers": true,
       "showHistory": false
@@ -197,7 +197,7 @@ window.DASHBOARD_CONFIG = {
       "label": "土佐犬",
       "icon": "🦄",
       "columnIndex": 4,
-      "displayTemplate": "済",
+      "displayTemplate": "一曲収録プレゼント",
       "isBoolean": true,
       "showUsers": true,
       "showHistory": true
