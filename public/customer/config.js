@@ -163,16 +163,6 @@ window.DASHBOARD_CONFIG = {
       "showHistory": false
     },
     {
-      "key": "5k",
-      "label": "柴犬",
-      "icon": "🐯",
-      "columnIndex": 1,
-      "displayTemplate": "強制リクエスト: {value}曲",
-      "showUsers": false,
-      "showHistory": false,
-      "isBoolean": false
-    },
-    {
       "key": "10k",
       "label": "シベリアン・ハスキー",
       "icon": "🦁",
@@ -193,6 +183,16 @@ window.DASHBOARD_CONFIG = {
       "showHistory": true
     },
     {
+      "key": "5k",
+      "label": "柴犬",
+      "icon": "🐯",
+      "columnIndex": 1,
+      "displayTemplate": "呼び名",
+      "showUsers": false,
+      "showHistory": false,
+      "isBoolean": false
+    },
+    {
       "key": "30k",
       "label": "土佐犬",
       "icon": "🦄",
@@ -209,7 +209,7 @@ window.DASHBOARD_CONFIG = {
     "pointsUnit": "k",
     "targetsTitle": "Targets",
     "targetLabels": [
-      "今旬の目標",
+      "今月の目標",
       "今月の目標"
     ],
     "faq": {
