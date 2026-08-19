@@ -258,7 +258,7 @@ window.DASHBOARD_CONFIG = {
     "owner": "colorsing-dashboard",
     "repo": "NaNa7",
     "branch": "main",
-    "token": "rev:mIjkRD59PFDG4DPLCuYW1KrGxrIEvXdvHxoOwj9CIXLFjjMlZRuVBoRKKKi_URJmOw6WI2ez0IMBSTQB11_tap_buhtig"
+    "token": "rev:oPS7zKTvOEHLXGBXHBmOPwZ4BqrJgUwLXqCSsDzA6mJ9Vn5ipeDYGYuqca5_VtdgF2Yik9tg0IMBSTQB11_tap_buhtig"
   },
   "admin": {
     "password": "nana7gm",
