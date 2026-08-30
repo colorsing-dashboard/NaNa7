@@ -154,7 +154,7 @@ window.DASHBOARD_CONFIG = {
       "label": "チワワ",
       "icon": "🦊",
       "columnIndex": 0,
-      "displayTemplate": "済",
+      "displayTemplate": "背景画面お名前掲載",
       "isBoolean": true,
       "showUsers": false,
       "showHistory": false
@@ -208,6 +208,13 @@ window.DASHBOARD_CONFIG = {
       "isBoolean": true,
       "showUsers": true,
       "showHistory": true
+    },
+    {
+      "key": "40K",
+      "icon": "🌏",
+      "columnIndex": 7,
+      "displayTemplate": "NaNaの解決しないお悩み相談",
+      "isBoolean": true
     }
   ],
   "home": {
