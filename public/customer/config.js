@@ -194,7 +194,7 @@ window.DASHBOARD_CONFIG = {
       "label": "柴犬",
       "icon": "🐯",
       "columnIndex": 1,
-      "displayTemplate": "呼び名",
+      "displayTemplate": "テーマソング",
       "showUsers": false,
       "showHistory": false,
       "isBoolean": false
