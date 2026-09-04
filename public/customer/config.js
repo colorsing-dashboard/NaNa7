@@ -114,6 +114,9 @@ window.DASHBOARD_CONFIG = {
     "shadowCompareEnabled": false,
     "useRuntimeConfig": true
   },
+  "compat": {
+    "viewsMigrationVersion": 1
+  },
   "views": [
     {
       "id": "home",

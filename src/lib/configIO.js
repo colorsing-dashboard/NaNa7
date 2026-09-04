@@ -1,5 +1,6 @@
 import DEFAULT_CONFIG from './defaults.js'
 import { reverseToken, restoreToken } from './utils.js'
+import { markAdminBrowser as markAdminBrowserIn, migrateStoredViews } from './viewsCompatMigration.js'
 
 // パス第1セグメント（リポジトリ名）でキーを分離。同一ドメインの複数顧客が混在しないように
 const _pathSegment = typeof window !== 'undefined' ? window.location.pathname.split('/')[1] : ''
@@ -136,6 +137,43 @@ export function loadConfig() {
   config.admin = baseConfig.admin
 
   return config
+}
+
+// この端末で管理画面のパスワード認証に成功したことを、ブラウザを閉じても残る形で
+// 記録する。sessionStorage.admin_auth は終了時に消えるため永続判定には使えない。
+// 認証画面を開いただけでは呼ばない。呼び出しは AdminApp の認証成功時だけ。
+export function markAdminBrowser() {
+  if (typeof window === 'undefined') return
+  markAdminBrowserIn({ storage: localStorage, repoSlug: _repoSlug })
+}
+
+// 公開ページ用の読み込み。
+//
+// legacy 運用では localStorage が公開設定より優先されるため、過去にこのページを
+// 開いた端末には古い views が残り続け、config.js で view を有効にしても届かない。
+// localStorage を読む前に一度だけ views を公開状態へ揃える。読み込みの優先順位
+// そのものは変えない。管理画面（loadConfig）はこの経路を通らないので、管理者の
+// ローカルプレビューには影響しない。
+//
+// tenant の config.js が compat.viewsMigrationVersion を宣言している場合のみ動く。
+export function loadPublicConfig() {
+  if (typeof window !== 'undefined') {
+    const published = window.DASHBOARD_CONFIG
+    const version = Number(published?.compat?.viewsMigrationVersion)
+    if (Number.isInteger(version) && version >= 1) {
+      try {
+        migrateStoredViews({
+          storage: localStorage,
+          repoSlug: _repoSlug,
+          publishedViews: published.views,
+          version,
+        })
+      } catch {
+        // 移行に失敗しても公開ページは従来どおり表示する
+      }
+    }
+  }
+  return loadConfig()
 }
 
 // 設定を localStorage に保存
