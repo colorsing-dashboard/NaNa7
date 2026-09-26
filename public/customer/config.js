@@ -212,14 +212,14 @@ window.DASHBOARD_CONFIG = {
     {
       "key": "40K",
       "icon": "🌏",
-      "columnIndex": 7,
+      "columnIndex": 5,
       "displayTemplate": "NaNaの解決しないお悩み相談",
       "isBoolean": true
     },
     {
       "key": "50K",
       "icon": "🌈",
-      "columnIndex": 8,
+      "columnIndex": 6,
       "displayTemplate": "未定",
       "isBoolean": true
     }
