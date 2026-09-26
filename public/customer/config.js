@@ -114,9 +114,6 @@ window.DASHBOARD_CONFIG = {
     "shadowCompareEnabled": false,
     "useRuntimeConfig": true
   },
-  "compat": {
-    "viewsMigrationVersion": 1
-  },
   "views": [
     {
       "id": "home",
@@ -218,6 +215,13 @@ window.DASHBOARD_CONFIG = {
       "columnIndex": 7,
       "displayTemplate": "NaNaの解決しないお悩み相談",
       "isBoolean": true
+    },
+    {
+      "key": "50K",
+      "icon": "🌈",
+      "columnIndex": 8,
+      "displayTemplate": "未定",
+      "isBoolean": true
     }
   ],
   "home": {
@@ -280,5 +284,8 @@ window.DASHBOARD_CONFIG = {
   "admin": {
     "password": "nana7gm",
     "developerKey": "CSadmin"
+  },
+  "compat": {
+    "viewsMigrationVersion": 1
   }
 }
