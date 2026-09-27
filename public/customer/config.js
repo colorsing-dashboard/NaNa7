@@ -222,6 +222,12 @@ window.DASHBOARD_CONFIG = {
       "columnIndex": 6,
       "displayTemplate": "未定",
       "isBoolean": true
+    },
+    {
+      "key": "60K",
+      "icon": "👑",
+      "columnIndex": 7,
+      "displayTemplate": ""
     }
   ],
   "home": {
