@@ -6,7 +6,7 @@ window.DASHBOARD_CONFIG = {
     "name": "NaNa❼🐾の犬小屋",
     "sidebarTitle": "　color sing",
     "footerText": "NaNa❼🐾の犬小屋",
-    "footerSubText": "応援ギフトは保護犬活動の場へ寄付します🐾",
+    "footerSubText": "収益は全て保護犬活動の場へ寄付します🐾",
     "footerNote": "",
     "pageTitle": "NaNa❼🐾 - 特典管理",
     "loadingEmoji": "🐾",
@@ -118,33 +118,33 @@ window.DASHBOARD_CONFIG = {
     {
       "id": "home",
       "label": "Home",
-      "icon": "home",
+      "icon": "hi:home",
       "enabled": true
     },
     {
       "id": "menu",
       "label": "特典内容",
-      "icon": "book-open",
+      "icon": "hi:speaker-wave",
       "enabled": true
     },
     {
       "id": "rights",
       "label": "特典権利者",
-      "icon": "user-check",
+      "icon": "hi:trophy",
       "enabled": true,
       "title": "特典権利者一覧"
     },
     {
       "id": "icons",
       "label": "枠内アイコン",
-      "icon": "gift",
+      "icon": "hi:gift",
       "enabled": true,
       "title": "枠内アイコン"
     },
     {
       "id": "events",
       "label": "イベント",
-      "icon": "calendar-days",
+      "icon": "hi:microphone",
       "enabled": true
     }
   ],
@@ -152,7 +152,7 @@ window.DASHBOARD_CONFIG = {
     {
       "key": "1k",
       "label": "チワワ",
-      "icon": "🦊",
+      "icon": "🐶",
       "columnIndex": 0,
       "displayTemplate": "背景画面お名前掲載",
       "isBoolean": true,
@@ -160,21 +160,21 @@ window.DASHBOARD_CONFIG = {
       "showHistory": false
     },
     {
-      "key": "3k",
+      "key": "5k",
       "label": "パピヨン",
-      "icon": "🐶",
-      "columnIndex": 0,
-      "displayTemplate": "手描き枠内アイコン",
+      "icon": "🐯",
+      "columnIndex": 1,
+      "displayTemplate": "月替わり特典",
       "isBoolean": true,
       "showUsers": false,
       "showHistory": false
     },
     {
-      "key": "10k",
+      "key": "7k",
       "label": "シベリアン・ハスキー",
       "icon": "🦁",
       "columnIndex": 2,
-      "displayTemplate": "手描き枠内特別アイコン",
+      "displayTemplate": "手描き枠内アイコン",
       "isBoolean": true,
       "showUsers": true,
       "showHistory": false
@@ -182,52 +182,46 @@ window.DASHBOARD_CONFIG = {
     {
       "key": "20k",
       "label": "ドーベルマン",
-      "icon": "🐲",
+      "icon": "🐼",
       "columnIndex": 3,
-      "displayTemplate": "5曲特別セトリ配信",
+      "displayTemplate": "手描き枠内ツーショットアイコン",
       "isBoolean": true,
       "showUsers": true,
       "showHistory": true
     },
     {
-      "key": "5k",
+      "key": "40k",
       "label": "柴犬",
-      "icon": "🐯",
-      "columnIndex": 1,
-      "displayTemplate": "テーマソング",
-      "showUsers": false,
-      "showHistory": false,
-      "isBoolean": false
-    },
-    {
-      "key": "30k",
-      "label": "土佐犬",
       "icon": "🦄",
       "columnIndex": 4,
-      "displayTemplate": "一曲収録プレゼント",
+      "displayTemplate": "5曲セトリから始まる定期配信",
+      "showUsers": false,
+      "showHistory": false,
+      "isBoolean": true
+    },
+    {
+      "key": "50k",
+      "label": "土佐犬",
+      "icon": "🐲",
+      "columnIndex": 5,
+      "displayTemplate": "NaNaの解決しないお悩み相談30分",
       "isBoolean": true,
       "showUsers": true,
       "showHistory": true
     },
     {
-      "key": "40K",
+      "key": "60k",
       "icon": "🌏",
-      "columnIndex": 5,
-      "displayTemplate": "NaNaの解決しないお悩み相談",
-      "isBoolean": true
-    },
-    {
-      "key": "50K",
-      "icon": "🌈",
       "columnIndex": 6,
-      "displayTemplate": "未定",
+      "displayTemplate": "知らない曲でも1曲覚えて収録プレゼント",
       "isBoolean": true
     },
     {
-      "key": "60K",
+      "key": "77k",
       "icon": "👑",
       "columnIndex": 7,
-      "displayTemplate": ""
+      "displayTemplate": "",
+      "isBoolean": true
     }
   ],
   "home": {
@@ -250,7 +244,7 @@ window.DASHBOARD_CONFIG = {
         },
         {
           "question": "特典の使用方法🐾",
-          "answer": "収録プレゼント、特別配信は月内希望者の方へのみになります！！\n"
+          "answer": "40k以上の特典は月内、希望してくださる方に限ります🐾\n"
         }
       ]
     }
